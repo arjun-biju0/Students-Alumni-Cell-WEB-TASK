@@ -1,0 +1,23 @@
+CREATE DATABASE employee;
+CREATE TABLE emp(
+    e_id INT AUTO_INCREMENT,
+    sal INT,
+    comm INT,
+    ename VARCHAR(255),
+    job VARCHAR(255)
+    );
+
+SELECT * FROM emp WHERE ename LIKE 'n%' AND ename LIKE '%n';
+SELECT * FROM emp WHERE ename LIKE '%a%' AND ename LIKE '%i%' AND ename NOT LIKE '%e%';
+SELECT * FROM emp WHERE comm IS NULL AND sal>0;
+SELECT * FROM emp WHERE sal= (SELECT MAX(sal) FROM emp WHERE sal < (SELECT MAX(sal) FROM emp));
+SELECT * FROM emp WHERE (SELECT AVG(sal) FROM emp GROUP BY job ) <1200 ;
+
+
+
+
+
+
+ARJUN BIJU
+21AE10007
+Q-5 SAC WEB TEAM TASK
